@@ -11,7 +11,7 @@
 	<center><h1>It is used to block select text , copy , cut , paste and inspect element</h1></center>
 	<form action="#" method="post" accept-charset="" align="center">
 		<label for="">Name</label>
-		<textarea name="address" cols="20" rows="5"></textarea>
+		<textarea name="address" cols="20" rows="5" class="character"></textarea>
 		<br>
 		<input type="submit" name="submit" id="submit" value="Submit">
 	</form>
@@ -21,6 +21,14 @@
 			//to prevent user to select text on page
 			document.getElementById("demo").style.userSelect = "none";
 
+			//function of only character insert
+			$(".character").keydown(function(event) 
+			{
+				if(!(event.keyCode >= 65 && event.keyCode <= 90))
+			    {
+			        return false;
+			    }
+			});
 			//key events
 			$(document).keydown(function(event)
 			{
